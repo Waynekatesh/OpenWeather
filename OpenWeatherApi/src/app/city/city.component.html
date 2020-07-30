@@ -1,0 +1,26 @@
+<div class=" cities">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <Ul *ngFor="let current of currentWeather">
+                <h2 (click)="getcity(current)">{{current.cityName}}</h2>
+                <h5>{{current.dt}}</h5>
+                <div class="col-md-12 col-sm-12 col-xs-12 centerpressure">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 col-6 ">
+                            <h4 class="deg">Pressure</h4><br>
+                            <h5 class="des">{{current.pressure}}</h5>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 col-4 ">
+                            <h4 class="deg">Humidity</h4><br>
+                            <h5 class="des">{{current.humidity}}</h5>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 col-4 ">
+                            <h4 class="deg">Current Temperature</h4><br>
+                            <h5 class="des">{{current.currentWeather}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </Ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+img{
+    width: 80%;}
+   
+
+    .vl {
+        border-left: 6px solid green;
+        height: 250px;
+      }
+     
+    .Weather
+    {
+        padding-left:50px!important ;
+        padding-right: 50px!important;
+            background-color: blue;
+            background-image: linear-gradient(blue,  #4775d1);
+            min-height: 100%;
+            height: auto;
+            max-height: auto;
+        
+    }
+    h1,h5,h2{
+        color: white;
+    }
+    h4,h3,img{
+text-align: center;
+color:white;
+    }
+    mat-card.mat-card {
+        background-color:  #24478f
+        ;
+    }
+
+    /* .rowimage
+    {
+        width: 70%;
+    } */
+
+    @media only screen and (min-width: 992px) {
+        
+       h3{
+           font-size: 50px;
+       }
+            .borderCss {
+                border-left: 1px solid white;
+                height: 250px;
+            }
+            img{
+                width: 60%;
+           }
+                   
+                h1.font {
+                    font-size: 100px;
+                    text-align: center;
+                    color: white;
+                }
+                h4.sunny {
+                    font-size: 25px;
+                    text-align: center;
+                    color: white;
+                }
+                h3.deg,h4.des,h4.cardtime{
+                    font-size: 25px;
+                    text-align: center;
+                    color: white;
+                }       
+                img.images{
+                    margin-left: 40px;
+                }
+        }
+
+        @media only screen and (max-width: 600px) {
+        
+            .borderCss {
+                border-top: 1px solid white;
+                height: 150px;
+                border-bottom: 1px solid white;
+            }
+           
+            img{
+                width: 50%;
+                
+            height: 80%;}
+            h5{font-size: 15px}
+            h4,h3,img{
+                font-size: 15px;
+                text-align: center;
+                color:white;
+                    }
+                   h2{font-size: 15px;
+                        text-align: left;
+                    }
+                    img{
+                        margin-left: 10px;
+                    }
+                    h1 {
+                        font-size: 25px;
+                        color: white;
+                    }
+                    .Weather
+    {
+        padding-left:50px!important ;
+        padding-right: 50px!important;
+            background-color: blue;
+            min-height: 100%;
+            height: auto;
+            max-height: auto;
+        
+    }
+    .bottommargin
+                    {
+                        margin-bottom: 20px;
+                    }
+        }
+
+
+
+        @media only screen and (min-width: 768px) {
+          
+img{
+    margin-left: 20px;
+}
+                    h4,h3{
+                        font-size: 15px;
+                        text-align: center;
+                        color:white;
+                            }
+                
+                    .borderCss {
+                        border-left: 1px solid white;
+                        height: 200px;
+                    }
+                    h1 {
+                        font-size: 25px;
+                        color: white;
+                    }
+                   
+
+          }
+      
+          @media only screen and (min-width: 320px) {
+            /* .cardsize{
+                width: 90%;
+            } */
+
+          }
