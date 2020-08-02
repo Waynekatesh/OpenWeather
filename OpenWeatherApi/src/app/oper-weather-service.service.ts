@@ -6,28 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OperWeatherServiceService {
-  private _response;
-
-  // private _cityResponse;
-
-  // public get cityResponse() {
-  //   return this._cityResponse;
-  // }
-  // public set cityResponse(value) {
-  //   this._cityResponse = value;
-  // }
-  // public getcityResponse()
-  // {
-  //   return this.setcityResponse;
-  // }
-  // public setcityResponse(value)
-  // {
-  //   this.setcityResponse=value;
-  // }
-
-
-
-  
+  private _response;  
   public get response() {
     return this._response;
   }
@@ -50,7 +29,6 @@ export class OperWeatherServiceService {
 
    getCities(data,data2):Observable<Object>
    {
-    //  console.log(data);
       let header=new HttpHeaders().set('token',data2);
       header= header.set('Access-Control-Allow-Headers',"Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
       header=header.set('Content-Type', 'application/json');

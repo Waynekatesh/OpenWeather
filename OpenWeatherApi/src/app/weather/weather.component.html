@@ -54,24 +54,24 @@
     <h2>Today's Weather</h2>
     <div class="row bottommargin">
         <!-- <owl-carousel-o [options]="customOptions"> -->
-        <owl-carousel [options]="{items: 3, dots: true, nav: true,navText:[&#x27;Prev&#x27;,&#x27;Next&#x27;]}"
+            <owl-carousel [options]="{items: 3, dots: true, nav: true,navText:[&#x27;Prev&#x27;,&#x27;Next&#x27;]}"
             [items]="hourlyWeatherForcity" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="col-md-2 col-sm-2 col-xs-12 col-4" *ngFor="let hourly of hourlyWeatherForcity">
+        <!-- <div class="col-lg-8 col-md-2 col-sm-2 col-xs-12 col-4" > -->
             <!-- <ng-template carouselSlide> -->
-            <mat-card class="cardsize">
+            <mat-card class="cardsize" *ngFor="let hourly of hourlyWeatherForcity">
                 <div>
                     <h4 class="cardtime">{{hourly.dt|date:'shortTime'}}</h4>
                 </div>
                 <div>
-                    <img class="images" src="assets\cloud.png">
+                    <img class="img-fluid" src="assets\cloud.png">
                 </div>
                 <div>
                     <h4 class="cardtime">{{hourly.temp}}</h4>
                 </div>
             </mat-card>
         <!-- </ng-template> -->
-        </div>
-    </owl-carousel>
+        <!-- </div> -->
+        </owl-carousel>
     <!-- </owl-carousel-o> -->
     </div>
 </div>

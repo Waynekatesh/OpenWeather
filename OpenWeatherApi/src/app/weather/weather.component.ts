@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OperWeatherServiceService } from '../oper-weather-service.service';
 import { Router } from '@angular/router';
-
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor(private service: OperWeatherServiceService,private  router:Router) { }
+  constructor(private service: OperWeatherServiceService,private  router:Router,private spinner: NgxSpinnerService) { }
   humidity:any='';
 
   feelslike:any='';
@@ -27,6 +27,10 @@ CW:any=''
   cards:any=[{times:"1am",degrees:25}, {times:"2am",degrees:24},{times:"3am",degrees:26},{times:"4am",degrees:27},
   {times:"5am",degrees:22},{times:"6am",degrees:24}];
   ngOnInit() {
+    setTimeout(() => {
+ 
+      this.spinner.hide();
+  }, 500);
     this.service.getCurrentWeatherForCity(localStorage.getItem('countryid'),localStorage.getItem('cityidforOneCity'),localStorage.getItem('token')).subscribe((hourlyforcity:any)=>{
       console.log(hourlyforcity)
       this.hourlyWeatherForcity=hourlyforcity.hourlyWeather;
@@ -41,10 +45,4 @@ this.windspeed=localStorage.getItem('windspeed')
 this.humidity=localStorage.getItem('humidity')
 this.feelslike=localStorage.getItem('feelslike');
   }
-
-
-
-
-
-
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OperWeatherServiceService } from '../oper-weather-service.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
+
 
 @Component({
   selector: 'app-city',
@@ -8,11 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./city.component.css']
 })
 export class CityComponent implements OnInit {
-  constructor(private service: OperWeatherServiceService,private  router:Router) { }
+  constructor(private service: OperWeatherServiceService,private  router:Router,private spinner: NgxSpinnerService) { }
 
 currentWeather:any=[];
   city:any=[];
   ngOnInit() {
+
+    setTimeout(() => {
+ 
+      this.spinner.hide();
+  }, 100);
+
      this.service.getCities(localStorage.getItem('countryid'),localStorage.getItem('token')).subscribe((cities:any)=>{
        console.log(cities)
        this.city=cities
@@ -44,6 +52,7 @@ currentWeather:any=[];
      localStorage.setItem("humidity",ciit.humidity)
      localStorage.setItem("pressure",ciit.pressure)
      localStorage.setItem("windspeed",ciit.wind_speed)
+     this.spinner.show();
      this.router.navigate(['Weather']);
   }
 }

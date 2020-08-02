@@ -1,20 +1,42 @@
-<form [formGroup]='loginForm'>
-    <div class="form-group row">
-        <h2>Login</h2>
+<div class=" row loginBg m-0 p-0">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-12 pl-5 my-auto">
+        <div class="sidelogo">
+            <div class="title fwhite" style="color: cornsilk;">
+                Welcome To Weather Map
+            </div>
+            <div class="description fwhite" style="color: cornsilk;">
+                You can login and find your city's current weather, humidity, pressure details here.
+            </div>
+        </div>
     </div>
-    <div class="form-group row">
-        <label class="col-sm-2">Email</label>
-        <input type="email" class="form-control col-sm-3" formControlName='email'>
+    <div class="loginpage col-lg-4 col-md-4 col-sm-6 col-12 m-0 p-0">
+        <mat-card class="loginform p-3">
+            <div class="m-5 pt-5 centertext f22 fblack">
+                LOGIN TO YOUR ACCOUNT
+            </div>
+            <form class="mx-5 mt-5" [formGroup]="loginForm" focusInvalidInput>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+                        Email Is Required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" id="myInput" matInput placeholder="Password" formControlName="password">
+                    <mat-icon class="custom-cursor" (click)="showHidePwd()" matSuffix>remove_red_eye</mat-icon>
+                    <mat-error *ngIf="loginForm.controls.password.hasError('required')">
+                        Password is Required
+                    </mat-error>
+                </mat-form-field>
+                <div class="d-flex justify-content-center">
+                    <p>
+                        <button type="submit" class="btn btn-primary" (click)='login(loginForm.value)'>Login</button> New user? <a routerLink='/SignUp'>SignUp</a>
+                    </p>
+                </div>
+            </form>
+        </mat-card>
     </div>
-    <div class="form-group row">
-        <label class="col-sm-2">Password</label>
-        <input type="password" class="form-control col-sm-3" formControlName='password'>
-    </div>
-    <div>
-        <p>
-            <button type="submit" class="btn btn-primary" (click)='login(loginForm.value)'>Login</button>
-            New user? <a routerLink='/SignUp'>SignUp</a>
-        </p>
-    </div>
-</form>
-<router-outlet></router-outlet>
+</div>

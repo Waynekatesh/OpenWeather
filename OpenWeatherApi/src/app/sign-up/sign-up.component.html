@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <form [formGroup]='userForm'>
         <div class="form-group row">
         <h2>Sign-Up</h2>
@@ -27,4 +27,72 @@
         </div>
         <button type="submit" class="btn btn-primary" (click)='addUser(userForm.value)'>SignUp</button>
     </form>
+</div> -->
+
+
+
+
+
+<div class=" row loginBg m-0 p-0">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-12 pl-5 my-auto">
+        <div class="sidelogo">
+            <div class="title fwhite" style="color: cornsilk;">
+                Welcome To Weather Map
+            </div>
+            <div class="description fwhite" style="color: cornsilk;">
+                Please Sign-Up to get the weather details.
+            </div>
+        </div>
+    </div>
+    <div class="loginpage col-lg-4 col-md-4 col-sm-6 col-12 m-0 p-0">
+        <mat-card class="loginform p-3">
+            <div class="m-5 pt-5 centertext f22 fblack">
+                Sign Up
+            </div>
+            <form class="mx-2 mt-2" [formGroup]="userForm" focusInvalidInput>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Username" formControlName="userName">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="userForm.controls.userName.hasError('required')">
+                        Username Is Required
+                    </mat-error>
+                </mat-form-field><br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="userForm.controls.email.hasError('required')">
+                        Email Is Required
+                    </mat-error>
+                </mat-form-field><br>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" id="myInput" matInput placeholder="Password" formControlName="password">
+                    <mat-icon class="custom-cursor" (click)="showHidePwd()" matSuffix>remove_red_eye</mat-icon>
+                    <mat-error *ngIf="userForm.controls.password.hasError('required')">
+                        Password is Required
+                    </mat-error>
+                </mat-form-field><br>
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Country</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let country of countries" [value]="country.value">
+                            {{country.countryName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div class="d-flex justify-content-center">
+                    <p>
+                        <button type="submit" class="btn btn-primary" (click)='addUser(userForm.value)'>Register</button> Already registered? <a routerLink='/Login'> Login</a>
+                    </p>
+                </div>
+            </form>
+        </mat-card>
+    </div>
 </div>
