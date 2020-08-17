@@ -1,0 +1,57 @@
+<div class="DailyWeather">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="title">Open Weather</h1>
+        </div>
+        <!-- </div>
+    <div class="row"> -->
+        <div class="time col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <h1>{{current.city.cityname}},{{current.city.country.countryName}}</h1>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h5>{{current.dt}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="imgsize col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            <img class="img-fluid " src="assets\cloud.png">
+        </div>
+    </div>
+    <div class="row">
+        <h1>Daily Weather</h1>
+    </div>
+
+    <div class="row">
+        <div class="imgsize col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div class="currentclass row">
+                <h1 class="currentsize">{{current.currentWeather}}*c</h1>
+            </div>
+            <div class="currentclass row">
+                <h2 class="currentsize"> {{current.dt | date}}</h2>
+            </div>
+        </div>
+        <div class="sizeofimage col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <img class="img-fluid " src="assets\weather.png">
+            <div class="currentclass row">
+                <h1 class="winspd">{{current.wind_speed}}kmPh</h1>
+            </div>
+        </div>
+        <div class="cardss col-lg-7 col-md-12 col-sm-12 col-xs-12 ">
+            <owl-carousel [options]="owlOptions" [items]="dailyweather" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                <mat-card class="cardsize" *ngFor="let daily of dailyweather">
+                    <div>
+                        <h4 class="cardtime">{{daily.dt|date:'EEEE '}}</h4>
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="assets\cloud.png">
+                    </div>
+                    <div>
+                        <h4 class="cardtime">{{daily.morn}}*c</h4>
+                    </div>
+                </mat-card>
+            </owl-carousel>
+        </div>
+    </div>
+</div>

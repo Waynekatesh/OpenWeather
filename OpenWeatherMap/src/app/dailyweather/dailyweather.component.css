@@ -1,0 +1,71 @@
+.title {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.DailyWeather {
+    background-color: blue;
+    background-image: linear-gradient(white, blue);
+    overflow-x: hidden;
+}
+
+.time {
+    text-align: right;
+    padding-top: 50px;
+    padding-right: 70px;
+}
+
+.imgsize.col-lg-8.col-md-12.col-sm-12.col-xs-12 {
+    max-width: 15%;
+    margin-left: 40%;
+}
+
+.imgsize.col-lg-3.col-md-12.col-sm-12.col-xs-12 {
+    max-width: 20%;
+}
+
+.currentclass.row {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+h1.currentsize {
+    font-size: 100px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+h2.currentsize {
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+.sizeofimage.col-lg-3.col-md-12.col-sm-12.col-xs-12 {
+    max-width: 13%;
+    margin-right: 53px;
+    /* margin-left: 40%; */
+}
+
+.winspd {
+    font-size: 45px;
+    text-align: center;
+    padding-left: 15px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+mat-card.mat-card {
+    background-color: #24478f;
+    width: 230px;
+    height: 350px;
+    border-top-width: auto;
+    position: relative;
+    z-index: 0;
+    padding-left: 15px;
+    text-align: center;
+}
+
+h1 {
+    padding-left: 50px;
+}
